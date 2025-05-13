@@ -77,6 +77,7 @@ class AGIServer extends events.EventEmitter {
           ...agiVariables,
           remoteServer,
           socket,
+          vars: agiVariables
         });
         this.emit("call", call);
 

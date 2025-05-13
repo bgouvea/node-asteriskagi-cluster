@@ -29,6 +29,7 @@ export declare class AGIChannel extends events.EventEmitter {
     accountcode?: string;
     threadid?: string;
     currently?: string | false;
+    vars?: object;
     constructor(props: {
         socket: net.Socket;
         remoteServer: string | false;
@@ -50,6 +51,7 @@ export declare class AGIChannel extends events.EventEmitter {
         enhanced?: string;
         accountcode?: string;
         threadid?: string;
+        vars?: object;
     });
     AddQueueMember: (args: string) => Promise<false | undefined>;
     AgentLogin: (args: string) => Promise<false | undefined>;

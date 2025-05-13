@@ -30,6 +30,7 @@ export class AGIChannel extends events.EventEmitter {
   public accountcode?: string = "";
   public threadid?: string = "";
   public currently?: string | false;
+  public vars?: object = {};
 
   constructor(props: {
     socket: net.Socket;
@@ -52,6 +53,7 @@ export class AGIChannel extends events.EventEmitter {
     enhanced?: string;
     accountcode?: string;
     threadid?: string;
+    vars?: object;
   }) {
     super();
     this._socket = props.socket;
@@ -75,6 +77,7 @@ export class AGIChannel extends events.EventEmitter {
     this.accountcode = props?.accountcode || "";
     this.threadid = props?.threadid || "";
     this.currently = false; // Current operation
+    this.vars = props?.vars || {};
   }
 
   // Commands mapped to Exec
